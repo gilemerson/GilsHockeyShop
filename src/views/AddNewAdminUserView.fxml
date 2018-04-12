@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.AddNewAdminUserViewController">
+    <stylesheets>
+        <URL value="@loginGUI.css" />
+    </stylesheets>
+   <children>
+      <VBox alignment="CENTER" layoutX="200.0" layoutY="77.0" prefHeight="400.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Add New Admin User" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="39.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="102.0" prefWidth="590.0">
+               <children>
+                  <GridPane prefHeight="157.0" prefWidth="372.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Password" textFill="WHITE" />
+                        <PasswordField fx:id="passwordTextField" GridPane.columnIndex="1" />
+                        <Label text="Re-Enter password" textFill="WHITE" GridPane.rowIndex="1" />
+                        <PasswordField fx:id="passwordReEnterTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="43.0" prefWidth="560.0">
+               <children>
+                  <Button layoutX="468.0" layoutY="8.0" mnemonicParsing="false" onAction="#saveNewAdminUserButtonPushed" style="-fx-background-color: #E45652;" text="Save" textFill="WHITE" />
+                  <Button layoutX="528.0" layoutY="8.0" mnemonicParsing="false" onAction="#cancelButtonPushed" prefWidth="62.0" style="-fx-background-color: #E45652;" text="Cancel" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <Label fx:id="errMsgLabel" text="Label" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
