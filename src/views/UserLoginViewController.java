@@ -90,8 +90,10 @@ public class UserLoginViewController implements Initializable {
             SceneChanger sc = new SceneChanger();
             
             //if the password match, change to the adminuserview
-            if(userID.equals(dbPassword))
+            // || (passwordField != null) && (userIDTextField != null))
+            if(userID.equals(dbPassword)){
             sc.changeScenes(event, "AdminUsersView.fxml", "Gils Hockey Shop - Admin Users");
+            }
             
             else
                 //if they do not match, update the error message
