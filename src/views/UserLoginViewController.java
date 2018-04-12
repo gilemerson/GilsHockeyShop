@@ -116,7 +116,7 @@ public class UserLoginViewController implements Initializable {
         //load the image for the login page sidebar
         try 
         {
-            imageFile = new File("./src/images/hockeyshop.png");
+            imageFile = new File("./src/images/hockey-shop.gif");
             BufferedImage bufferedImage = ImageIO.read(imageFile);
             Image image = SwingFXUtils.toFXImage(bufferedImage, null);
             imageView.setImage(image);

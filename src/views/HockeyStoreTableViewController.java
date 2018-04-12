@@ -1,5 +1,7 @@
 package views;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -10,6 +12,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,6 +20,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javax.imageio.ImageIO;
 import models.HockeyShop;
 
 /**
@@ -32,6 +38,9 @@ public class HockeyStoreTableViewController implements Initializable {
     @FXML private TableColumn<HockeyShop, String> sizeColumn;
     @FXML private TableColumn<HockeyShop, String> warrantyColumn;
     @FXML private TableColumn<HockeyShop, String> priceColumn;
+    
+    @FXML private ImageView imageView;
+    private File imageFile;
     
     @FXML private Button editShopItemsButton;
     
@@ -67,6 +76,19 @@ public class HockeyStoreTableViewController implements Initializable {
     
      @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        //load the image for the logo
+        try 
+        {
+            imageFile = new File("./src/images/Hockey-Logo.png");
+            BufferedImage bufferedImage = ImageIO.read(imageFile);
+            Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+            imageView.setImage(image);
+        }
+        catch(IOException e)
+        {
+            System.err.println(e.getMessage());
+        }
         
         //disable edit button until admin selected item from the table
         this.editShopItemsButton.setDisable(true);

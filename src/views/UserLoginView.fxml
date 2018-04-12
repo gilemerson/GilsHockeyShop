@@ -17,9 +17,9 @@
         <URL value="@loginGUI.css" />
     </stylesheets>
    <children>
-      <ImageView fx:id="imageView" fitHeight="361.0" fitWidth="481.0" layoutX="14.0" layoutY="45.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageView" fitHeight="336.0" fitWidth="491.0" layoutX="11.0" layoutY="61.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/hockey-shop.png" />
+            <Image url="@../images/hockey-shop.gif" />
          </image>
       </ImageView>
       <Button layoutX="67.0" layoutY="206.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="98.0" style="-fx-background-color: #E45652;" text="Sign Up" textFill="WHITE">
@@ -28,7 +28,7 @@
          </font>
       </Button>
       <TextField layoutX="164.0" layoutY="206.0" opacity="0.69" prefHeight="43.0" prefWidth="277.0" promptText="Enter Email Address" />
-      <AnchorPane layoutX="499.0" layoutY="48.0" prefHeight="353.0" prefWidth="332.0" style="-fx-background-color: #9C2B27;">
+      <AnchorPane layoutX="509.0" layoutY="59.0" prefHeight="329.0" prefWidth="332.0" style="-fx-background-color: #9C2B27;">
          <children>
             <Label layoutX="59.0" layoutY="56.0" text="Admin Login" textFill="WHITE">
                <font>
@@ -48,12 +48,12 @@
             <PasswordField fx:id="passwordField" layoutX="60.0" layoutY="172.0" promptText="Enter Password" style="-fx-background-color: #9C2B27;" />
          </children>
       </AnchorPane>
-      <Text fill="WHITE" layoutX="48.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Gil's Hockey Shop" wrappingWidth="407.8789026737213">
+      <Text fill="WHITE" layoutX="48.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Gil's Hockey Shop" wrappingWidth="407.8789026737213">
          <font>
             <Font size="45.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="67.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="One stop shop for all your hockey needs">
+      <Text fill="WHITE" layoutX="67.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="One stop shop for all your hockey needs">
          <font>
             <Font size="15.0" />
          </font>
