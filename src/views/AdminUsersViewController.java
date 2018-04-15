@@ -31,6 +31,8 @@ public class AdminUsersViewController implements Initializable {
     
     /**
      * This method will change scenes and allow the user to add a new admin user
+     * @param event
+     * @throws IOException 
      */
     public void AddNewAdminUserButtonPushed(ActionEvent event) throws IOException {
         SceneChanger sc = new SceneChanger();
@@ -39,6 +41,8 @@ public class AdminUsersViewController implements Initializable {
     
     /**
      * This method will change scenes and allow the user to go back and view the store inventory 
+     * @param event
+     * @throws IOException 
      */
     public void ViewStoreButtonPushed(ActionEvent event) throws IOException {
         SceneChanger sc = new SceneChanger();
@@ -47,13 +51,18 @@ public class AdminUsersViewController implements Initializable {
     
     /**
      * This method will change scenes and allow the user to logout and return to the admin login window
+     * @param event
+     * @throws IOException 
      */
     public void LogoutButtonPushed(ActionEvent event) throws IOException {
         SceneChanger sc = new SceneChanger();
         sc.changeScenes(event, "UserLoginView.fxml" , "Admin Login"); 
   }
+    
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb 
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -71,11 +80,10 @@ public class AdminUsersViewController implements Initializable {
         }        
     } 
     
-    
      /**
-     * This method will load all the admin users from the database and load them into the TableView object
-     * @throws java.sql.SQLException
-     */
+      * This method will load all the admin users from the database and load them into the TableView object
+      * @throws SQLException 
+      */
     public void AdministratorUsers() throws SQLException {
         ObservableList<AdminUsers> adminusers = FXCollections.observableArrayList();
         

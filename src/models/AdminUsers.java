@@ -39,6 +39,11 @@ public class AdminUsers {
         this.password = Password;
     }
     
+   
+   /**
+    * This method will INSERT the password and salt in the adminusers database and save the salted password 
+    * @throws SQLException 
+    */
    public void insertIntoDB() throws SQLException{
     
         Connection conn = null;
@@ -47,7 +52,7 @@ public class AdminUsers {
          try
         {
         //1. Connect to the database
-            conn = DriverManager.getConnection("jdbc:mysql://198.71.227.88:3306/demo_database", "EmersonGil", "Emerson0505");
+             conn = DriverManager.getConnection("jdbc:mysql://198.71.227.88:3306/demo_database", "EmersonGil", "Emerson0505");
             
             //2.create a string that holds the query with ? as users input
             String sql = "INSERT INTO adminusers (password, salt)"

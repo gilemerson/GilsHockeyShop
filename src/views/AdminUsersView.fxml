@@ -6,32 +6,33 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.AdminUsersViewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="700.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.AdminUsersViewController">
     <stylesheets>
         <URL value="@loginGUI.css" />
     </stylesheets>
    <children>
-      <VBox alignment="CENTER" layoutX="207.0" layoutY="71.0" prefHeight="400.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" layoutY="71.0" prefHeight="400.0" prefWidth="700.0" spacing="20.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label text="Admin Users" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="39.0" />
                </font>
             </Label>
-            <TableView fx:id="AdminUserTable" prefHeight="200.0" prefWidth="200.0">
+            <TableView fx:id="AdminUserTable" prefHeight="200.0" prefWidth="666.0">
               <columns>
                 <TableColumn fx:id="adminIDColumn" prefWidth="75.0" text="User ID" />
-                <TableColumn fx:id="passwordColumn" prefWidth="524.0" text="Password" />
+                <TableColumn fx:id="passwordColumn" prefWidth="1020.0" text="Password" />
               </columns>
             </TableView>
             <AnchorPane prefHeight="38.0" prefWidth="600.0">
                <children>
-                  <Button layoutX="499.0" layoutY="11.0" mnemonicParsing="false" onAction="#LogoutButtonPushed" style="-fx-background-color: #E45652;" text="Logout" textFill="WHITE" />
-                  <Button layoutX="403.0" layoutY="11.0" mnemonicParsing="false" onAction="#ViewStoreButtonPushed" style="-fx-background-color: #E45652;" text="View Store" textFill="WHITE" />
+                  <Button layoutX="539.0" layoutY="11.0" mnemonicParsing="false" onAction="#LogoutButtonPushed" style="-fx-background-color: #E45652;" text="Logout" textFill="WHITE" />
+                  <Button layoutX="442.0" layoutY="11.0" mnemonicParsing="false" onAction="#ViewStoreButtonPushed" style="-fx-background-color: #E45652;" text="View Store" textFill="WHITE" />
                   <Button layoutY="6.0" mnemonicParsing="false" onAction="#AddNewAdminUserButtonPushed" style="-fx-background-color: #E45652;" text="Add New Admin User" textFill="WHITE" />
                </children>
             </AnchorPane>
@@ -39,6 +40,9 @@
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
+         <effect>
+            <DropShadow />
+         </effect>
       </VBox>
    </children>
 </AnchorPane>

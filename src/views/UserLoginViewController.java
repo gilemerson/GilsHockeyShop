@@ -35,12 +35,14 @@ public class UserLoginViewController implements Initializable {
     @FXML private PasswordField passwordField;
     @FXML private Label errMsgLabel;
     @FXML private ImageView imageView;
+    
     private File imageFile;
     
     /**
      * If Passwords match correctly - Store Encrypted password in DB - Then Login user and open AdminUsersView.fxml 
      * @param event
-     * @throws IOException 
+     * @throws IOException
+     * @throws SQLException 
      */
     public void LoginButtonPushed(ActionEvent event) throws IOException, SQLException{
       
@@ -93,20 +95,23 @@ public class UserLoginViewController implements Initializable {
             // || (passwordField != null) && (userIDTextField != null))
             if(userID.equals(dbPassword)){
             sc.changeScenes(event, "AdminUsersView.fxml", "Gils Hockey Shop - Admin Users");
+            
             }
             
             else
                 //if they do not match, update the error message
-                errMsgLabel.setText("The userID and password do correspond");
-                                  
+                errMsgLabel.setText("The userID and password do correspond");                        
         }
-        catch(SQLException e){
+        catch(SQLException e)
+        {
             System.err.println(e.getMessage());
         }      
     }
     
     /**
-     * Initializes the controller class.
+     * Initializes the controller class
+     * @param url
+     * @param rb 
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

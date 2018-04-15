@@ -61,6 +61,10 @@ public class HockeyShop {
         this.price = price;
     }
     
+    /**
+     * This method will INSERT the hockey store items into the hockeyitems database to be viewed on the HockeyStoreTable
+     * @throws SQLException 
+     */
     public void insertIntoDB() throws SQLException{
     
         Connection conn = null;
@@ -99,6 +103,54 @@ public class HockeyShop {
                 conn.close();
         }     
       }
+    
+    /**
+     * this method will update the hockey shop items in the database when the user edits a store item
+     * @throws SQLException 
+     */
+    public void updateHockeyShopItemInDB() throws SQLException{
+       
+        Connection conn = null;
+        PreparedStatement preparedStatement = null; 
+        
+        try{  
+            //1. Connect to the database
+            conn = DriverManager.getConnection("jdbc:mysql://198.71.227.88:3306/demo_database", "EmersonGil", "Emerson0505");    
+            
+            //2. create a string that hold our sql update command with ? for the hockeyshop 
+            String sql = "UPDATE hockeyitems SET equipment = ?, size = ?, warranty = ?, price = ?"
+                    + "WHERE itemID = ?";
+            
+            //3. prepare sql query against sql injection 
+            preparedStatement = conn.prepareStatement(sql);
+            
+            //4. bind the parameters
+            preparedStatement.setString(1, equipment);
+            preparedStatement.setString(2, size);
+            preparedStatement.setString(3, warranty);
+            preparedStatement.setString(4, price);
+            preparedStatement.setInt(5, itemID);
+            
+            //6. Run the command on the sql server
+            preparedStatement.executeUpdate();
+            preparedStatement.close();    
+             
+        }
+        catch(SQLException e)
+        {
+            System.err.println(e.getMessage());
+        }
+        finally
+        {
+            if(conn != null)
+              conn.close();
+            
+            if(preparedStatement != null) 
+                preparedStatement.close();        
+            }    
+        }
+    
+    
     }
     
    

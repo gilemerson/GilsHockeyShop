@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 /**
- *
+ * 
  * @author gilemerson
  */
 public class PasswordGenerator {

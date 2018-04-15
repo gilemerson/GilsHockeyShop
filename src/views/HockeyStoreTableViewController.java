@@ -45,15 +45,29 @@ public class HockeyStoreTableViewController implements Initializable {
     @FXML private Button editShopItemsButton;
     
     /**
-     * if a item in the shop has been selected, enable the edit button
+     * If the edit button is pushed, pass the selected item to the tableView and preload it with the data
+     * @param event
+     * @throws IOException 
+     */
+    public void editButtonPushed(ActionEvent event) throws IOException{
+        SceneChanger sc = new  SceneChanger();
+        HockeyShop hockeyshop = this.GilsHockeyShopTable.getSelectionModel().getSelectedItem();
+        AddNewStoreItemViewController adstvc = new AddNewStoreItemViewController();
+        sc.chageScenes(event, "AddNewStoreItemView.fxml", "Edit Store Items", hockeyshop, adstvc);
+    }
+    
+    /**
+     * If a item in the shop has been selected, enable the edit button
      */
     public void ShopItemSelected(){
         editShopItemsButton.setDisable(false);
     }
     
     /**
-    * This method will change scenes and allow the user to see the admin users with accounts
-    */
+     * This method will change scenes and allow the user to see the admin users with accounts
+     * @param event
+     * @throws IOException 
+     */
     public void ViewAdminUsersButtonPushed(ActionEvent event) throws IOException {
         SceneChanger sc = new SceneChanger();
         sc.changeScenes(event, "AdminUsersView.fxml" , "Gils Hockey Shop - Admin Users"); 
@@ -61,6 +75,8 @@ public class HockeyStoreTableViewController implements Initializable {
     
    /**
     * This method will allow the user to switch to the TableView to add a new store item
+    * @param event
+    * @throws IOException 
     */
     public void newHockeyShopItemButtonPushed(ActionEvent event) throws IOException {
         SceneChanger sc = new SceneChanger();
@@ -68,6 +84,8 @@ public class HockeyStoreTableViewController implements Initializable {
   }
     /**
      * This method will allow the user to logout and return to the admin login window
+     * @param event
+     * @throws IOException 
      */
     public void LogoutButtonPushed(ActionEvent event) throws IOException {
         SceneChanger sc = new SceneChanger();
@@ -139,7 +157,7 @@ public class HockeyStoreTableViewController implements Initializable {
                                                        resultSet.getString("size"),
                                                        resultSet.getString("warranty"),
                                                        resultSet.getString("price"));
-                newHockeyShop.setItemID(resultSet.getInt("ItemID"));
+                newHockeyShop.setItemID(resultSet.getInt("itemID"));
                 hockeyshop.add(newHockeyShop);
             }
             

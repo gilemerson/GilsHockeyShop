@@ -18,12 +18,13 @@ import models.AdminUsers;
  * @author gilemerson
  */
 public class AddNewAdminUserViewController implements Initializable {
+    
     @FXML private PasswordField passwordTextField;
     @FXML private PasswordField passwordReEnterTextField;
     @FXML private Label errMsgLabel;
    
     /**
-     * 
+     * This method will change scenes when the cancel button is pushed
      * @param event
      * @throws IOException 
      */
@@ -36,7 +37,10 @@ public class AddNewAdminUserViewController implements Initializable {
      /**
       * This method will check to see if the password is valid and matches all criteria, then it will
       * save the new password into the database and redirect the user to AdminUsersView.fxml 
-      * @param event 
+      * @param event
+      * @throws IOException
+      * @throws SQLException
+      * @throws NoSuchAlgorithmException 
       */
     public void saveNewAdminUserButtonPushed(ActionEvent event) throws IOException, SQLException, NoSuchAlgorithmException{
         
@@ -48,12 +52,14 @@ public class AddNewAdminUserViewController implements Initializable {
         adminusers.insertIntoDB();
         SceneChanger sc = new SceneChanger();
         sc.changeScenes(event, "AdminUsersView.fxml", "Gils Hockey Shop - Admin Users"); 
+        
         }     
     }
     
     /**
      * This method will validate that the passwords match and also make sure that the passwords are more then 5 characters in length
      * if not an error message will be displayed
+     * @return 
      */
     public boolean validPasswords(){
         if(passwordTextField.getText().length() <5)

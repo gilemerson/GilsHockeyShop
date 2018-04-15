@@ -15,10 +15,11 @@ public class main extends Application {
     public static void main(String[] args){
         launch(args);
     }
-    
-   /*
-    * Launch Admin Login - UserLoginView.fxml
-    */
+    /**
+     * Launch Admin Login - UserLoginView.fxml
+     * @param primaryStage
+     * @throws Exception 
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("UserLoginView.fxml"));
@@ -28,5 +29,6 @@ public class main extends Application {
         primaryStage.setTitle("Admin Login");
         primaryStage.setScene(scene);
         primaryStage.show();
+        
     }
 }

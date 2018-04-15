@@ -20,7 +20,7 @@
    <children>
       <VBox alignment="CENTER" layoutX="200.0" layoutY="86.0" prefHeight="400.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER" text="Add New Items To The Store" textFill="WHITE">
+            <Label fx:id="headerLabel" alignment="CENTER" text="Add New Items To The Store" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="39.0" />
                </font>
