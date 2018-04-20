@@ -52,7 +52,7 @@ public class UserLoginViewController implements Initializable {
         ResultSet resultSet = null;
         
         int userNumber = Integer.parseInt(userIDTextField.getText());
-        
+       
         try{
             
             // 1.Connect to DB
@@ -90,6 +90,7 @@ public class UserLoginViewController implements Initializable {
             String userID = PasswordGenerator.getSHA512Password(passwordField.getText(), salt);
             
             SceneChanger sc = new SceneChanger();
+            
             
             //if the password match, change to the adminuserview
             // || (passwordField != null) && (userIDTextField != null))

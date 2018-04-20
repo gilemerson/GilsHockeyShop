@@ -73,7 +73,7 @@ public class HockeyShop {
          try
         {
         //1. Connect to the database
-            conn = DriverManager.getConnection("jdbc:mysql://198.71.227.88:3306/demo_database", "EmersonGil", "Emerson0505");
+             conn = DriverManager.getConnection("jdbc:mysql://198.71.227.88:3306/demo_database", "EmersonGil", "Emerson0505");
             
             //2.create a string that holds the query with ? as users input
             String sql = "INSERT INTO hockeyitems (equipment, size, warranty, price)"
@@ -115,7 +115,7 @@ public class HockeyShop {
         
         try{  
             //1. Connect to the database
-            conn = DriverManager.getConnection("jdbc:mysql://198.71.227.88:3306/demo_database", "EmersonGil", "Emerson0505");    
+            conn = DriverManager.getConnection("jdbc:mysql://198.71.227.88:3306/demo_database", "EmersonGil", "Emerson0505");
             
             //2. create a string that hold our sql update command with ? for the hockeyshop 
             String sql = "UPDATE hockeyitems SET equipment = ?, size = ?, warranty = ?, price = ?"
